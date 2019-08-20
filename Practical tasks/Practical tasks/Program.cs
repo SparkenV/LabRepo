@@ -1,5 +1,6 @@
 ﻿using System;
 using Task1;
+using Task2;
 
 namespace Practical_tasks
 {
@@ -29,7 +30,7 @@ namespace Practical_tasks
                         break;
                     case "2":
                         Console.Clear();
-                        CheckSecondTask();
+                        SecondTask.Check();
                         break;
                     case "0":
                         IsTestingFinished = true;
@@ -43,13 +44,5 @@ namespace Practical_tasks
                 }
             }
         }
-
-
-        public static void CheckSecondTask()
-        {
-            Console.WriteLine("Цей таск ще не реалiзований!");
-        }
-
-
     } 
 }
