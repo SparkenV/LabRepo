@@ -1,6 +1,7 @@
 ﻿using System;
 using Task1;
 using Task2;
+using Task3;
 
 namespace Practical_tasks
 {
@@ -17,6 +18,7 @@ namespace Practical_tasks
                 Console.WriteLine("Виберiть подальшi дiї \n" +
                     "1 - Перевiрити перше завдання\n" +
                     "2 - Перевiрити друге завдання\n" +
+                    "3 - Перевiрити третє завдання\n" +
                     "0 - Завершити перевiрку\n" +
                     "clear - Очистити консоль\n");
 
@@ -31,6 +33,10 @@ namespace Practical_tasks
                     case "2":
                         Console.Clear();
                         SecondTask.Check();
+                        break;
+                    case "3":
+                        Console.Clear();
+                        ThirdTask.Check();
                         break;
                     case "0":
                         IsTestingFinished = true;
