@@ -10,8 +10,10 @@ namespace Task3
         public static void Check()
         {
             FirstPart();
+            SecondPart();
         }
 
+        #region First Part
         private static void FirstPart()
         {
             GeneratePersons();
@@ -21,10 +23,7 @@ namespace Task3
             Console.ReadKey();
 
             PrintPersonsData();
-
-
         }
-
         private static void GeneratePersons()
         {
             Random random = new Random();
@@ -35,11 +34,10 @@ namespace Task3
             for (var i = 0; i < count; i++)
             {
                 Console.WriteLine($"Створення {i + 1}-ої персони.");
-                AddPerson();
+                persons.Add(CreatePerson());
                 Console.Clear();
             }
         }
-
         private static void PrintPersonsData()
         {
             foreach (var person in persons)
@@ -52,7 +50,42 @@ namespace Task3
             Console.ReadKey();
         }
 
-        public static void AddPerson()
+        #endregion
+
+        #region Second Part
+
+        private static void SecondPart()
+        {
+            Console.Clear();
+            Console.WriteLine("Введiть данi ще однiєї персони!");
+            Person firstPerson = CreatePerson();
+
+            Console.Clear();
+            Console.WriteLine("Введiть данi ще однiєї персони!");
+            Person secondPerson = CreatePerson();
+            
+            Console.Clear();
+            persons.AddRange(new List<Person> { firstPerson, secondPerson });
+
+            PrintPersonsNumbers();
+        }
+
+        private static void PrintPersonsNumbers()
+        {
+            for(var i = 0; i < persons.Count; i++)
+            {
+                Console.WriteLine($"Мобiльнi номери {i+1}-ої персони");
+                persons[i].PrintPhoneNumbers();
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        #endregion
+
+        public static Person CreatePerson()
         {
             Console.Write("Введiть iм'я особи: ");
             string name = Console.ReadLine();
@@ -78,7 +111,7 @@ namespace Task3
                 PhoneNumbers = phoneNumbers
             };
 
-            persons.Add(person);      
+            return person;
         }
     }
 }

@@ -20,5 +20,13 @@ namespace Task3
         {
             Console.WriteLine($"Вiк персони - \"{Name}\"");
         }
+
+        public void PrintPhoneNumbers()
+        {
+            foreach (var number in PhoneNumbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
     }
 }
